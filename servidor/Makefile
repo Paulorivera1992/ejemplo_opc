@@ -1,10 +1,10 @@
 
 CC=gcc
-LINKS=-lpthread -lpython2.7
+LINKS=open62541/build/open62541.c
 
 
 server: 
-	$(CC) -std=c99 open62541.c server.c -o server $(LINKS)
+	$(CC) -std=c99 $(LINKS) server.c -o server -lpthread 
     
 
 clean:
